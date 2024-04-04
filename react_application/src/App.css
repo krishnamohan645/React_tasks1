@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,21 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+
+.App{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+table,tr{
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+tr,td,th{
+  border: 1px solid black;
+  border-collapse: collapse;
 }
