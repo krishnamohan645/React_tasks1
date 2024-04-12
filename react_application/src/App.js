@@ -1,10 +1,9 @@
 // import logo from './logo.svg';
 import './App.css';
-import DarkVariantExample from './reactBootstrap/carousel';
-import CollapsibleExample from './reactBootstrap/navBar';
-import AboutDetails from './reactBootstrap/about';
-import InterNational from './reactBootstrap/international';
-import IndiaService from './reactBootstrap/india';
+// import AddingFruits from './components/class-component/addingFruit';
+import Fruits from './components/class-component/fruits';
+// import ButtonComponent from './components/class-component/button';
+// import Counter from './components/class-component/counter';
 
 
 
@@ -12,7 +11,10 @@ import IndiaService from './reactBootstrap/india';
 function App() {
   return (
     <div className="App">
-      
+      {/* <Counter/> */}
+      {/* <ButtonComponent/> */}
+      <Fruits/>
+      {/* <AddingFruits/> */}
       </div>
   );
 }
