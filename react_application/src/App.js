@@ -12,11 +12,7 @@ import IndiaService from './reactBootstrap/india';
 function App() {
   return (
     <div className="App">
-      <CollapsibleExample/>
-      <DarkVariantExample/>
-      <AboutDetails/>
-      <InterNational/>
-      <IndiaService/>
+      
       </div>
   );
 }
