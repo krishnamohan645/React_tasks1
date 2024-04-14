@@ -1,0 +1,24 @@
+
+.productList{
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    margin: 60px;
+    gap: 20px;
+}
+
+.cards{
+    width: 200px;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+.cards:hover{
+    scale: 1.1;;
+}
+
+button{
+    margin-left: 50px;
+}
