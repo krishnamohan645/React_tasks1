@@ -7,10 +7,27 @@ const UseStateExample=()=>{
     const [products, setProducts] = useState([])
 
 
-
-   const updateProduct=()=>{
+    // updateItem = (index, updatedTitle, updatedThumbnail) => {
+    //     const newProducts = [...this.state.products];
+    //     if (index >= 0 && index < newProducts.length) {
+    //       newProducts[index] = {
+    //         ...newProducts[index],
+    //         title: updatedTitle,
+    //         thumbnail: updatedThumbnail
+    //       };
+    //       this.setState({ products: newProducts });
+    //     }
+    //   };
+   const updateProduct=(index,updatedTitle, updatedThumbnail,updatedPrice)=>{
     const updatedProducts = [...products]
-    
+    if(index > 0 && index < products.length){
+        updatedProducts[index]={
+            ...updatedProducts[index],
+            title: updatedTitle,
+            thumbnail: updatedThumbnail,
+            price: updatedPrice
+        }
+    }
     console.log(updatedProducts)
     }
     
