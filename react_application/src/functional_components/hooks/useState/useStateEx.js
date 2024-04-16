@@ -28,8 +28,28 @@ const UseStateExample = () => {
     setProducts(updatedProducts);
   };
 
-  const deleteProduct = products.map()
+  const addProducts = (updatedPrice, updatedThumbnail, updatedTitle) => {
+    const updatedProducts = [...products,{          
+          thumbnail: updatedThumbnail,
+          title: updatedTitle,
+          price: updatedPrice
 
+  }
+]
+    console.log(updatedProducts);
+    setProducts(updatedProducts);
+  };
+  
+  const deleteProduct = (index)=>{
+    const updatedProducts = products.filter((eachObject,i)=> i !== index)
+    console.log(updatedProducts)
+    setProducts(updatedProducts)
+  }
+
+  const resetProducts = ()=>{
+    fetchData()
+    
+  }
   const fetchData = async () => {
     const result = await axios.get("https://dummyjson.com/products");
     console.log(result);
@@ -40,6 +60,8 @@ const UseStateExample = () => {
   }, []);
   return (
     <>
+        <button className="btn" onClick={()=>addProducts(products[1].title,products[1].thumbnail,products[1].price)}>Add</button>
+        <button className="btn1" onClick={()=>resetProducts()}>Reset</button>
       <div className="container">
         {products.map((eachObject, index) => {
           return (
@@ -52,9 +74,7 @@ const UseStateExample = () => {
               />
               <h3 key={index}>{eachObject.title}</h3>
               <h3>₹{eachObject.price}</h3>
-              <button onClick={()=>{
-                deleteProduct()
-              }}>Delete</button>
+              <button onClick={()=>deleteProduct(index)}>Delete</button>
               <button
                 onClick={() =>
                   updateProduct(

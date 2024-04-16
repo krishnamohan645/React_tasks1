@@ -28,8 +28,30 @@ img{
 }
 
 
-button{
+.cards button{
     padding: 10px;
     /* margin-left: 10px; */
+    border-radius: 5px;
+}
+
+.btn{
+    margin-top: 30px;
+    margin-left: 600px;
+    padding: 5px;
+    width: 80px;
+    font-size: large;
+    background-color: rgb(160, 100, 216);
+    color: white;
+    border-radius: 5px;
+}
+
+.btn1{
+    margin-top: 30px;
+    margin-left: 100px;
+    padding: 5px;
+    width: 80px;
+    font-size: large;
+    background-color: rgb(160, 100, 216);
+    color: white;
     border-radius: 5px;
 }
