@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-
+import './index.css';
 
 
 
@@ -81,7 +81,7 @@ const UnControlledInput = () => {
         </button>
       </form>
       </div>
-<div className="table-container">
+<div >
       {submitedData.length < 5 && (
         <table>
           <thead>
