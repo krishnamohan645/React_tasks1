@@ -17,10 +17,11 @@ const ControlledInput =()=>{
     const userNameHandler =(event)=>{
         const userName = event.target.value
         setUserName(userName)
+        // setUserNameErr(null)
         if(userName.trim().length<6){
             setUserNameErr("username must be greater than 6 characters and should be unique")
         }else{
-            setUserNameErr("username should not empty")
+            setUserNameErr(null)
         }
         console.log(userName)
     }
@@ -28,8 +29,9 @@ const ControlledInput =()=>{
     const eMailHandler=(event)=>{
         const email = event.target.value
         setEmail(email)
+        setEmailErr(null)
         if(email.endsWith("@gmail.com")){
-            setEmailErr("ends with @gmai.com")
+            setEmailErr("ends with @gmail.com")
         }else{
             setEmailErr(null)
         }
@@ -38,20 +40,22 @@ const ControlledInput =()=>{
     const passwordHandler =(event)=>{
         const passwordValue = event.target.value
         setPassword(passwordValue)
+        setPasswordErr(null)
         if(passwordValue.trim().length<6 && !/[A-Z]/.test(passwordValue)){
             setPasswordErr("password must contain 6 characters and contain a capital letter")
         }else{
-            setConfirmPasswordErr(null)
+            setPasswordErr(null)
         }
     }
 
     const ConfirmPasswordHanlder = (event)=>{
         const confirmPasswordValue = event.target.value
         setConfirmPassword(confirmPasswordValue)
+        setConfirmPasswordErr(null)
         if(confirmPasswordValue !==password){
             setConfirmPasswordErr("password do not match")
         }else{
-            setUserNameErr(null)
+            setConfirmPasswordErr(null)
         }
     }
 
@@ -59,14 +63,26 @@ const ControlledInput =()=>{
         event.preventDefault()
         let hasError = false
 
-        if (!username.trim()) {
+        if (username.trim()) {
             setUserNameErr("Username should not be empty");
             hasError = true;
+          }else{
+            setUserNameErr(null)
+          }
+          if(!Email.trim()){
+            setEmailErr("email should notbe empty")
           }
           if(!password.trim()){
             setPasswordErr("password should not be empty")
         hasError= true
           }
+          if(!confirmPassword.trim()){
+            setConfirmPasswordErr("confirm password should not be empty")
+          }
+          if(hasError){
+            return
+          }
+
         const userDetails ={
             username: username,
             email: Email,
