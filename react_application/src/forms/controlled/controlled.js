@@ -10,6 +10,8 @@ const ControlledInput =()=>{
     const [userNameErr, setUserNameErr] = useState(null)
     const [passwordErr, setPasswordErr] = useState(null)
     const [confirmPasswordErr, setConfirmPasswordErr] = useState(null)
+    const [EmailErr, setEmailErr] = useState(null)
+
 
 
     const userNameHandler =(event)=>{
@@ -18,7 +20,7 @@ const ControlledInput =()=>{
         if(userName.trim().length<6){
             setUserNameErr("username must be greater than 6 characters and should be unique")
         }else{
-            setUserNameErr(null)
+            setUserNameErr("username should not empty")
         }
         console.log(userName)
     }
@@ -26,6 +28,11 @@ const ControlledInput =()=>{
     const eMailHandler=(event)=>{
         const email = event.target.value
         setEmail(email)
+        if(email.endsWith("@gmail.com")){
+            setEmailErr("ends with @gmai.com")
+        }else{
+            setEmailErr(null)
+        }
     }
 
     const passwordHandler =(event)=>{
@@ -34,7 +41,7 @@ const ControlledInput =()=>{
         if(passwordValue.trim().length<6 && !/[A-Z]/.test(passwordValue)){
             setPasswordErr("password must contain 6 characters and contain a capital letter")
         }else{
-            setPasswordErr(null)
+            setConfirmPasswordErr(null)
         }
     }
 
@@ -44,14 +51,25 @@ const ControlledInput =()=>{
         if(confirmPasswordValue !==password){
             setConfirmPasswordErr("password do not match")
         }else{
-            setConfirmPasswordErr(null)
+            setUserNameErr(null)
         }
     }
 
     const handleSubmit = (event)=>{
         event.preventDefault()
+        let hasError = false
+
+        if (!username.trim()) {
+            setUserNameErr("Username should not be empty");
+            hasError = true;
+          }
+          if(!password.trim()){
+            setPasswordErr("password should not be empty")
+        hasError= true
+          }
         const userDetails ={
             username: username,
+            email: Email,
             password:password,
             confirmPassword: confirmPassword,
             id:Math.random()
@@ -68,6 +86,9 @@ const ControlledInput =()=>{
            } 
            <label>Email:</label>
             <input type="Email" value={Email} onChange={eMailHandler}/>
+            {
+                EmailErr && <span style={{color:"red"}} >{EmailErr}</span>
+            }
             <label>Password:</label>
             <input type="password" value={password} onChange={passwordHandler}/>
             {
