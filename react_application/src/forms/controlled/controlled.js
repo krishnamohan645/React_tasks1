@@ -17,21 +17,19 @@ const ControlledInput =()=>{
     const userNameHandler =(event)=>{
         const userName = event.target.value
         setUserName(userName)
-        // setUserNameErr(null)
+        setUserNameErr(null)
         if(userName.trim().length<6){
             setUserNameErr("username must be greater than 6 characters and should be unique")
-        }else{
-            setUserNameErr(null)
         }
         console.log(userName)
     }
 
     const eMailHandler=(event)=>{
-        const email = event.target.value
-        setEmail(email)
+        const emailValue = event.target.value
+        setEmail(emailValue)
         setEmailErr(null)
-        if(email.endsWith("@gmail.com")){
-            setEmailErr("ends with @gmail.com")
+        if(emailValue.trim() && !emailValue.endsWith("@gmail.com")){
+            setEmailErr("Email ends with @gmail.com")
         }else{
             setEmailErr(null)
         }
@@ -61,36 +59,36 @@ const ControlledInput =()=>{
 
     const handleSubmit = (event)=>{
         event.preventDefault()
-        let hasError = false
 
-        if (username.trim()) {
+        if (!username.trim()) {
             setUserNameErr("Username should not be empty");
-            hasError = true;
-          }else{
-            setUserNameErr(null)
           }
           if(!Email.trim()){
             setEmailErr("email should notbe empty")
           }
           if(!password.trim()){
             setPasswordErr("password should not be empty")
-        hasError= true
           }
           if(!confirmPassword.trim()){
             setConfirmPasswordErr("confirm password should not be empty")
           }
-          if(hasError){
-            return
-          }
 
+
+if(username.trim() && Email.trim()&&password.trim()&&confirmPassword.trim()){
         const userDetails ={
             username: username,
             email: Email,
             password:password,
             confirmPassword: confirmPassword,
-            id:Math.random()
         }
         console.log(userDetails)
+
+        setUserName("");
+        setEmail("");
+        setPassword("");
+        setConfirmPassword("")
+    }
+
     }
     return(
         <div className="container">
