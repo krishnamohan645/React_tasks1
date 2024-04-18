@@ -93,6 +93,7 @@ if(username.trim() && Email.trim()&&password.trim()&&confirmPassword.trim()){
     return(
         <div className="container">
         <form onSubmit={handleSubmit} className="form-container">
+            <h1>Sign Up Form</h1>
             <label>Username:</label>
             <input type="text" value={username} onChange={userNameHandler} />
            {
