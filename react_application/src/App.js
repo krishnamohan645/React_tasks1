@@ -1,7 +1,9 @@
 // import logo from './logo.svg';
 // import './App.css';
 
-import LoginFromPostApi from "./forms/controlled/post_form";
+import UseEffectProducts from "./useEffect/productListing";
+
+// import LoginFromPostApi from "./forms/controlled/post_form";
 
 // import ControlledInput from "./forms/controlled/controlled";
 // import ControlledComponents1 from "./forms/controlled/controlled1";
@@ -14,7 +16,8 @@ function App() {
       {/* <UnControlledInput/> */}
       {/* <ControlledInput/> */}
       {/* <ControlledComponents1/> */}
-      <LoginFromPostApi/>
+      {/* <LoginFromPostApi/> */}
+      <UseEffectProducts/>
     </div>
   );
 }
