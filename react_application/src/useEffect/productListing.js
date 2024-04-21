@@ -13,6 +13,7 @@ const UseEffectProducts = () => {
 
   useEffect(() => {
     gettingSingleData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [count]);
 
   const fetchData = async () => {
@@ -60,6 +61,7 @@ const UseEffectProducts = () => {
         <img src={eachObject.thumbnail} alt={eachObject.title} />
         <p className="description">{eachObject.description}</p>
         <h2>Price: {eachObject.price}</h2>
+        <button>Add to Cart</button>
       </div>
     </div>
   );
