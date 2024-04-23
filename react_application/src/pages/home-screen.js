@@ -1,12 +1,13 @@
 import React from 'react'
 import ColorSchemesExample from '../components/header'
-import Background from '../components/Background/Background'
+import DarkVariantExample from '../components/carousels'
+
 
 function HomeScreen() {
   return (
     <div>
       <ColorSchemesExample/>
-      <Background/>
+      <DarkVariantExample/>
     </div>
   )
 }

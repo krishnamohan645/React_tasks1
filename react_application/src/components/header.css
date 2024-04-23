@@ -6,3 +6,28 @@
 .navbar1:hover{
 color: white;
 }
+
+.products{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 50px;
+    text-decoration: none;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 28%;
+    border: 1px solid black;
+    margin: 20px;
+    align-items: center;
+}
+button{
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    color: black;
+}
