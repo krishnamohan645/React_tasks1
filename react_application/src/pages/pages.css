@@ -1,0 +1,10 @@
+.invalid{
+    text-align: center;
+    margin-top: 200px;
+}
+.invalid button{
+    margin-top: 50px;
+    font-size: 30px;
+    border-radius: 10px;
+    padding: 10px;
+}
