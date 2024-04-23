@@ -20,10 +20,15 @@ color: white;
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-    width: 28%;
+    width: 300px;
     border: 1px solid black;
     margin: 20px;
     align-items: center;
+    padding: 10px;
+    
+}
+.card img{
+    border-radius: 50%;
 }
 button{
     border: none;

@@ -28,14 +28,14 @@ const ProductsFetching =()=>{
                         const {image, name,rating,id}=eachItem
                         return(
                             <div className="card" key={id}>
-                                <h2>Name:{name}</h2>
-                                <img src={image} alt={name} width={300}
+                                <h2 style={{fontSize:"20px", marginTop:"10px"}}>{name}</h2>
+                                <img src={image} alt={name} width={100}
                                 />
-                                <h2>Rating:{rating}</h2>
-                                <button ><Link to={`${name}/${id}`}>
-                                See More
+                                <h2 style={{fontSize:"20px" ,marginTop:"10px"}}>Rating:{rating}</h2>
+                                <button ><Link to={`${name}/${id}`} style={{textDecoration:"none"}}>
+                                
+                                See More    
                                 </Link>
-                                    
                                 </button>
                             </div>
                         )
