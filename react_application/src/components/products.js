@@ -41,7 +41,7 @@ const ProductsFetching =()=>{
                         )
                     })
                 ):(
-                    <h1>LoaderFunctionArgs...</h1>
+                    <h1>Loading...</h1>
                 )
             }
         </div>
